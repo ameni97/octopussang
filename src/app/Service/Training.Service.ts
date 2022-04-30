@@ -8,7 +8,7 @@ export class TrainingService {
 
   constructor(private http:HttpClient) { }
   getTrainings(){
-    return this.http.get('http://localhost:8084/SpringBoot/training');
+    return this.http.get('http://localhost:8084/SpringBoot/retrieve-all-Trainings');
    }
    deleteTraining(id:any){
      return this.http.delete('http://localhost:8084/SpringBoot/training/'+id);
@@ -18,5 +18,8 @@ export class TrainingService {
    }
    updateTraining(data:any,id:any){
  return this.http.put('http://localhost:8084/SpringBoot/training/'+id,data);
+   }
+   participateTraining(data:any,id:any){
+  return this.http.put('http://localhost:8084/SpringBoot/training/test/participer-a-formation/1/'+id,data);
    }
 }

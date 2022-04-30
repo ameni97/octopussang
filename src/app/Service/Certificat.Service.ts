@@ -8,7 +8,7 @@ export class CertificatService {
 
   constructor(private http:HttpClient) { }
   getCertificats(){
-    return this.http.get('http://localhost:8084/SpringBoot/certificat');
+    return this.http.get('http://localhost:8084/SpringBoot/retrieve-all-Certificats');
    }
    deleteCertificat(id:any){
      return this.http.delete('http://localhost:8084/SpringBoot/certificat/'+id);

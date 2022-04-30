@@ -1,1 +1,43 @@
-<p>list-training works!</p>
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Courses</h2>
+      <p>We offord a good training sessions with our professional trainers</p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let training of list ;">
+          <div class="course-item">
+            <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>{{training.domaine}}</h4>
+                <p class="price">{{training.price}}DT</p>
+              </div>
+
+              <h3><a href="course-details.html">{{training.title}}</a></h3>
+              <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                 <input type="submit" class="get-started-btn" value="Subscribe">
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i> &nbsp;{{training.nbParticipant}}
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- End Course Item-->
+
+      </div>
+
+    </div>
+  </section><!-- End Courses Section -->
+

@@ -40,6 +40,9 @@ import { AddNotificationComponent } from './Notification/add-notification/add-no
 import { DeleteNotificationComponent } from './Notification/delete-notification/delete-notification.component';
 import { ListNotificationComponent } from './Notification/list-notification/list-notification.component';
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -83,9 +86,12 @@ import { UpdateNotificationComponent } from './Notification/update-notification/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  bootstrap: [AppComponent],
+ // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
