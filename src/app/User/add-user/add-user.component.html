@@ -1,0 +1,41 @@
+<section id="contact" class="contact">
+    
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="row mt-5">
+        
+
+<div class="col-lg-8 mt-5 mt-lg-0">
+<h1> Sign Up </h1>
+<h3> Ce formulaire concerne tout les utilisateurs pour leur inscriptions dans notre site  </h3>
+    <form role="form" #f = 'ngForm' class="php-email-form">
+      <div class="row">
+        <div class="form-group mt-3">
+          <input type="text" name="userName" class="form-control" id="userName" placeholder="userName"  [(ngModel)] = 'user.userName' required>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" name="firstName" class="form-control" id="firstName" placeholder="firstName"  [(ngModel)] = 'user.firstName' required>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" name="lastName" class="form-control" id="lastName" placeholder="lastName"  [(ngModel)] = 'user.lastName' required>
+        </div>
+        <div class="form-group mt-3">
+          <input type="date" name="birthDate" class="form-control" id="birthDate" placeholder="birthDate"  [(ngModel)] = 'user.birthDate' required>
+        </div>
+        <div class="form-group mt-3 ">
+          <input type="email" class="form-control" name="email"  [(ngModel)] = 'user.email'  id="email" placeholder="Your Email" required>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input type="password" class="form-control" name="password" id="password" [(ngModel)] = 'user.password'  placeholder="password" required>
+      </div>
+      <div class="text-center"><button [disabled] = "f.invalid" type="submit" (click) = 'save()' >Confirm</button></div>
+    </form>
+    <h5> Toutes vos données seront sécurisées, cela nous aidera seulement à détecter nos soucis si vous le demander. Nous sommes à la hauteur de notre confiance </h5>
+
+</div>
+
+</div>
+</div>
+</section>

@@ -1,0 +1,38 @@
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" style="margin-bottom: -250px;">
+      <div class="container">
+        <h2>Tous nos utilisateurs qui nous ont fait confiance</h2>
+        <p>Voici une liste de nos utilisateurs qui nous ont fait confiance et qui grace a nous ont pu trouver une solution à leurs problèmes et pour nous un objectifs de plus atteint. </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Trainers Section ======= -->
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            <div *ngFor = 'let u of userList '  class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                <a  [routerLink] = "['/User',u.userId]"><div class="member">
+                  <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                  <div class="member-content">
+                    <h4>{{u.firstName}} {{u.lastName}}</h4>
+                    <span>{{u.email}}</span>
+                    <h4>Points : {{u.nbPoints}}</h4>
+                    
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div></a>
+              </div><div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                
+          </div>
+
+        </div>
+
+      </div>
+

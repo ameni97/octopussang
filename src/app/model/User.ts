@@ -7,8 +7,8 @@ export class User  {
 
        public userId?: number ;
        public email?: string;
-       public firstname?: string;
-       public lastname?: string;
+       public firstName?: string;
+       public lastName?: string;
        public nbPoints?: number;
        public password?: string;
        public userName?: string;

@@ -38,12 +38,19 @@ import { AddNotificationComponent } from './Notification/add-notification/add-no
 import { DeleteNotificationComponent } from './Notification/delete-notification/delete-notification.component';
 import { ListNotificationComponent } from './Notification/list-notification/list-notification.component';
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
-
+import { AddUserComponent } from './User/add-user/add-user.component';
+import { ListUserComponent } from './User/list-user/list-user.component';
+import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { UpdateUserComponent } from './User/update-user/update-user.component';
 
 
 
 const routes: Routes = [
   {path:'',redirectTo:'detailtr',pathMatch:'full'},
+  {path:'User/addUser', component:AddUserComponent},
+  {path:'User/userList', component:ListUserComponent},
+  {path:'User/:id', component:UserDetailsComponent},
+  {path:'User/update/:id', component:UpdateUserComponent},
   {path:'addtr', component:AddTrainingComponent},
   {path:'updatetr/:id', component:UpdateTrainingComponent},
   {path:'deltr/:id', component:DeleteTrainingComponent},

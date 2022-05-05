@@ -43,6 +43,10 @@ import { UpdateNotificationComponent } from './Notification/update-notification/
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddUserComponent } from './User/add-user/add-user.component';
+import { ListUserComponent } from './User/list-user/list-user.component';
+import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { UpdateUserComponent } from './User/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +86,11 @@ import { FormsModule } from '@angular/forms';
     AddNotificationComponent,
     DeleteNotificationComponent,
     ListNotificationComponent,
-    UpdateNotificationComponent
+    UpdateNotificationComponent,
+    AddUserComponent,
+    ListUserComponent,
+    UserDetailsComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
