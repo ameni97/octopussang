@@ -8,6 +8,6 @@ export class Event  {
        public dateEv?: Date;
        public description?: string;
        public nbPlaces ?: number;
-       public nbParticipations?: number;
+       public nbParticipation?: number;
        public users?: User[];
 }
