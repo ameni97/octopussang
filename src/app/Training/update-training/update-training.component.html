@@ -1,1 +1,111 @@
-<p>update-training works!</p>
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Courses</h2>
+      <p>We offord a good training sessions with our professional trainers</p>
+      </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6  align-items-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Update Training</h5>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>title</label>
+                <input type="text" class="form-control"  name="title" placeholder="title" ngModel required #n="ngModel" [(ngModel)]="training.title">
+                <!--<div *ngIf="n.invalid && n.touched" class="invalid-feedback">
+                    title required
+                    </div>-->
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">price</label>
+                <input type="number" class="form-control" name="price" placeholder="price" ngModel required [(ngModel)]="training.price">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>domaine</label>
+                <input type="text" class="form-control" placeholder="domaine" name="domaine" ngModel minlength="3" #t="ngModel" required [(ngModel)]="training.domaine">
+                <div *ngIf="t.invalid">
+   
+                    <div *ngIf="t.errors?.['required']" class="invalid-feedback">
+                        <span> required</span>
+                    </div>
+                    <div *ngIf="t.errors?.['minlength']" class="invalid-feedback">
+                       minlength
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-round" (click)="save(f.value)" [disabled]="f.invalid">Save Training</button>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+        </div>
+        <div class="col-md-6  align-items-center">
+            <div class="content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title"> List trainings</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead class=" text-primary">
+                              <th> Title </th>
+                              <th> Domaine </th>
+                              <th> Price </th>
+                              <th class="text-right"> Nb participants </th>
+                              <th> Action </th>
+                            </thead>
+                            <tbody  *ngFor="let training of list" >
+                              <tr>
+                                <td>
+                                    {{training.title}}
+                                </td>
+                                <td>
+                                    {{training.domaine}}
+                                </td>
+                                <td>
+                                    {{training.price}}DT
+                                </td>
+                                <td class="text-right">
+                                    {{training.nbParticipant}}
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/updatetr/',training.idTrain]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-outline-danger" (click)="delete(training.idTrain)"><i class="bi bi-trash"></i></button>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>

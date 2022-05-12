@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CertificatService } from 'src/app/Service/Certificat.Service';
 
 @Component({
@@ -9,8 +10,10 @@ import { CertificatService } from 'src/app/Service/Certificat.Service';
 })
 export class ListCertificatComponent implements OnInit {
 
+  id!: number;
+  public qrCertif:any;
   list!:any;
-  constructor(private service: CertificatService,  protected eventManager: EventManager) { }
+  constructor(private service: CertificatService, private router:Router, private ar:ActivatedRoute, protected eventManager: EventManager) { }
 
   ngOnInit(): void {
     this.service.getCertificats().subscribe(
@@ -19,6 +22,14 @@ export class ListCertificatComponent implements OnInit {
         console.log(t);
       }
     );
+  }
+  public downloadPDF(idCertif:any):void{
+    //this.id=this.ar.snapshot.params['id'];
+    //this.service.downloadPDF(idCertif).subscribe((resp)=>{
+      //console.log('resp : ', resp);
+      window.open("http://localhost:8084/SpringBoot/test/genpdf/"+idCertif);
+      this.router.navigate(['detailcer']);
+    //});
   }
 
 }

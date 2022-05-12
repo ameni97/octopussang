@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Training } from 'src/app/model/Training';
 import { TrainingService } from 'src/app/Service/Training.Service';
 
 @Component({
@@ -9,19 +11,41 @@ import { TrainingService } from 'src/app/Service/Training.Service';
 })
 export class AddTrainingComponent implements OnInit {
 
-  constructor(private s:TrainingService, private router:Router)  {
+  list!:Training[];
+  constructor(private s:TrainingService, private router:Router, protected eventManager: EventManager)  {
 
    }
 
   ngOnInit(): void {
+
+    this.s.getTrainings().subscribe(
+      (t)=>{
+        //this.list=[]
+        this.list=t;
+        console.log(t);
+      }
+    );
   }
-  save(t:any){
+  save(t:Training){
     this.s.addTraining(t).subscribe(
       ()=>{
        // alert('good')
-       this.router.navigate(['p2'])
+       this.router.navigate(['addtr'])
       }
     );
       }
 
-}
+     delete(id:any){
+        this.s.deleteTraining(id).subscribe(()=>{
+          this.s.getTrainings().subscribe(
+            (t)=>{
+              this.list=t;
+              console.log(t);
+              //this.router.navigate(['addtr'])
+            }
+          );  
+        })
+         
+      } 
+  }
+

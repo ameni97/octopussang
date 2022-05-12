@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddTrainingComponent } from './Training/add-training/add-training.component';
 import { UpdateTrainingComponent } from './Training/update-training/update-training.component';
-import { DeleteTrainingComponent } from './Training/delete-training/delete-training.component';
 import { ListTrainingComponent } from './Training/list-training/list-training.component';
 import { AddCertificatComponent } from './Certificat/add-certificat/add-certificat.component';
-import { DeleteCertificatComponent } from './Certificat/delete-certificat/delete-certificat.component';
 import { UpdateCertificatComponent } from './Certificat/update-certificat/update-certificat.component';
 import { ListCertificatComponent } from './Certificat/list-certificat/list-certificat.component';
 
@@ -22,9 +20,7 @@ import { DeleteQuizComponent } from './Quiz/delete-quiz/delete-quiz.component';
 import { ListQuizComponent } from './Quiz/list-quiz/list-quiz.component';
 import { UpdateQuizComponent } from './Quiz/update-quiz/update-quiz.component';
 import { AddFileComponent } from './File/add-file/add-file.component';
-import { DeleteFileComponent } from './File/delete-file/delete-file.component';
 import { ListFileComponent } from './File/list-file/list-file.component';
-import { UpdateFileComponent } from './File/update-file/update-file.component';
 
 import { AddQuestionComponent } from './Question/add-question/add-question.component';
 import { DeleteQuestionComponent } from './Question/delete-question/delete-question.component';
@@ -46,11 +42,9 @@ const routes: Routes = [
   {path:'',redirectTo:'detailtr',pathMatch:'full'},
   {path:'addtr', component:AddTrainingComponent},
   {path:'updatetr/:id', component:UpdateTrainingComponent},
-  {path:'deltr/:id', component:DeleteTrainingComponent},
   {path:'detailtr', component:ListTrainingComponent},
   {path:'addcer', component:AddCertificatComponent},
   {path:'updatecer/:id', component:UpdateCertificatComponent},
-  {path:'delcer/:id', component:DeleteCertificatComponent},
   {path:'detailcer', component:ListCertificatComponent},
 
   {path:'addmp', component:AddMoneypotComponent},
@@ -67,8 +61,6 @@ const routes: Routes = [
   {path:'delquiz/:id', component:DeleteQuizComponent},
   {path:'detailquiz', component:ListQuizComponent},
   {path:'addfile', component:AddFileComponent},
-  {path:'updatefile/:id', component:UpdateFileComponent},
-  {path:'delfile/:id', component:DeleteFileComponent},
   {path:'detailfile', component:ListFileComponent},
 
   {path:'addq', component:AddQuestionComponent},

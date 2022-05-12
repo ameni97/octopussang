@@ -1,1 +1,106 @@
-<p>update-certificat works!</p>
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Courses</h2>
+      <p>We offord a good training sessions with our professional trainers</p>
+      </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6  align-items-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Update Training</h5>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>title</label>
+                <input type="text" class="form-control"  name="title" placeholder="title" ngModel required #n="ngModel" [(ngModel)]="certificat.title">
+                <!--<div *ngIf="n.invalid && n.touched" class="invalid-feedback">
+                    title required
+                    </div>-->
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">date</label>
+                <input type="date" class="form-control" name="dateCertif" placeholder="price" ngModel required [(ngModel)]="certificat.dateCertif">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>User</label>
+                  <select name="iduser" class="form-control" ngModel>
+                    <option value="select user" selected>select User</option>
+                    <option *ngFor="let User of listf" [ngValue]="User.id">{{User.firstname}}&nbsp; {{User.lastname}}</option>
+                  </select>
+                </div>
+            </div>
+          <div class="row">
+            <div class="update ml-auto d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-round" (click)="save(f.value)" [disabled]="f.invalid">Save Training</button>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+        </div>
+        <div class="col-md-6  align-items-center">
+            <div class="content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title"> List Certificats </h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead class=" text-primary">
+                              <th> Title </th>
+                              <th> Date </th>
+                              <th> QRCode </th>
+                              <th> Cachet </th>
+                              <th> Action </th>
+                            </thead>
+                            <tbody  *ngFor="let certificate of list" >
+                              <tr>
+                                <td>
+                                    {{certificate.title}}
+                                </td>
+                                <td>
+                                    {{certificate.dateCertif | date:"dd/MM/yyyy"}}
+                                </td>
+                                <td>
+                                    {{certificate.qrCertif}}
+                                </td>
+                                <td>
+                                    {{certificate.cachet}}
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/updatecer/',certificate.idCertif]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-outline-danger" (click)="delete(certificate.idCertif)"><i class="bi bi-trash"></i></button>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+

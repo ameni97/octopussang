@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { File } from 'src/app/model/File';
 import { FileService } from 'src/app/Service/File.Service';
 
 @Component({
@@ -9,19 +10,42 @@ import { FileService } from 'src/app/Service/File.Service';
 })
 export class AddFileComponent implements OnInit {
 
-  constructor(private s:FileService, private router:Router)  {
+  constructor(private s:FileService, private router:Router ,private ar:ActivatedRoute)  {
 
   }
-
+file!:File;
+list!:File[];
+id!:any;
  ngOnInit(): void {
+ // this.id=this.ar.snapshot.params['id'];
+  this.s.getFiles().subscribe(
+    (t)=>{
+      //this.list=[]
+      this.list=t;
+      console.log(t);
+    });
  }
  save(t:any){
-   this.s.addFile(t).subscribe(
+   console.log(t);
+   
+   this.s.uploadFile(t).subscribe(
      ()=>{
       // alert('good')
-      this.router.navigate(['p2'])
+      this.router.navigate(['addfile'])
      }
    );
-     }
+ }
+
+ delete(id:any){
+  this.s.deleteFile(id).subscribe(()=>{
+    this.s.getFiles().subscribe(
+      (t)=>{
+        this.list=t;
+        console.log(t);
+        //this.router.navigate(['addtr'])
+      }
+    );  
+  })
+} 
 
 }

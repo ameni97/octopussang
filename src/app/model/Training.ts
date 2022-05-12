@@ -10,10 +10,10 @@ export class Training  {
        public title?: string;
        public domaine?: string;
        public price?: number;
-       public nbparticipants?: string;
+       public nbParticipant?: number;
        public users?:User[];
        
-    
+       
 
 
 }
