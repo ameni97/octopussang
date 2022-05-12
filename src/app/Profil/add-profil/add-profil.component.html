@@ -1,0 +1,65 @@
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Profiles</h2>
+      <p>our profiles</p>
+      </div>
+  </div>
+
+  <
+  <section id="profiles" class="profiles">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6  align-items-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Add profile</h5>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>domaine</label>
+                <input type="text" class="form-control"  name="domaine" placeholder="domaine" ngModel required #n="ngModel" >
+                <div *ngIf="n.invalid && n.touched" class="invalid-feedback">
+                    title required
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">educationLevel</label>
+                <input type="text" class="form-control" name="educationLevel" placeholder="educationLevel" ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>centreInteret</label>
+                <input type="text" class="form-control" placeholder="centreInteret" name="centreInteret" ngModel minlength="3" #t="ngModel" required>
+                <div *ngIf="t.invalid">
+   
+                    <div *ngIf="t.errors?.['required']" class="invalid-feedback">
+                        <span> required</span>
+                    </div>
+                    <div *ngIf="t.errors?.['minlength']" class="invalid-feedback">
+                       minlength
+                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-round" (click)="save(f.value)" [disabled]="f.invalid">Save</button>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+

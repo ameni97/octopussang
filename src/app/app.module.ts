@@ -42,7 +42,15 @@ import { ListNotificationComponent } from './Notification/list-notification/list
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddProfilComponent } from './Profil/add-profil/add-profil.component';
+import { DeleteProfilComponent } from './Profil/delete-profil/delete-profil.component';
+import { ListProfilComponent } from './Profil/list-profil/list-profil.component';
+import { UpdateProfilComponent } from './Profil/update-profil/update-profil.component';
+import { AddOffreComponent } from './Offre/add-offre/add-offre.component';
+import { DeleteOffreComponent } from './Offre/delete-offre/delete-offre.component';
+import { ListOffreComponent } from './Offre/list-offre/list-offre.component';
+import { UpdateOffreComponent } from './Offre/update-offre/update-offre.component';
 
 @NgModule({
   declarations: [
@@ -82,13 +90,22 @@ import { FormsModule } from '@angular/forms';
     AddNotificationComponent,
     DeleteNotificationComponent,
     ListNotificationComponent,
-    UpdateNotificationComponent
+    UpdateNotificationComponent,
+    AddOffreComponent,
+    DeleteOffreComponent,
+    ListOffreComponent,
+    UpdateOffreComponent,
+    AddProfilComponent,
+    DeleteProfilComponent,
+    ListProfilComponent,
+    UpdateProfilComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],

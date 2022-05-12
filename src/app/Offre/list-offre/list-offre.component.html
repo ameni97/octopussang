@@ -1,0 +1,41 @@
+
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Offres Job </h2>
+      <p></p>
+      </div>
+  </div><!-- End Breadcrumbs -->
+
+  
+  <section id="Offres" class="Offres">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let offre of list">
+          <div class="course-item">
+            <!--<img src="assets/img/course-1.jpg" class="img-fluid" alt="...">-->
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4>offre name: {{offre.ofName}}</h4><br>
+                <br><p class="price">postul date : {{offre.datePost |date:"dd/MM/yyyy" }}</p>
+              </div>
+
+              <h3>number of posts : {{offre.nbPosts}}</h3><br>
+              <p>  Interet : {{offre.centreInteret}}</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                    <a [routerLink]="['/updateOff/',offre.idOffre]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> 
+          
+      </div>
+
+      
+
+    </div>
+  </section>
