@@ -1,1 +1,43 @@
-<p>list-moneypot works!</p>
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+      <h2>Moneypot</h2>
+      <p>You can donnate here to give women another chance! </p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= moneypots Section ======= -->
+  <section id="events" class="events">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row" >
+        <div class="col-md-6 d-flex align-items-stretch" *ngFor="let moneypot of list ;">
+          <div class="card">
+            <div class="card-img">
+              <img src="assets/img/events-1.jpg" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Money collected = {{moneypot.moneyCollected}}</a></h5>
+              <p class="fst-italic text-center">Money spend = {{moneypot.moneySpend}} </p>
+              <p class="card-text">{{moneypot.rib}}</p>
+             
+              
+              <div  id="div1" class=" row align-items-center"  >
+                <label>set Money to donate</label>  
+                <input type="number"  ngModel name="money"[(ngModel)]="moneypot.money">
+                <button id="d" class="get-started-btn" (click)="donate(moneypot.idJack,moneypot.money)">Donate</button>
+                <a href="paypal.html">paypal</a>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  
+
+  
+</section>

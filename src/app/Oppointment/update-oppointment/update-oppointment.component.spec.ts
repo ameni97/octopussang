@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteFileComponent } from './delete-file.component';
+import { UpdateOppointmentComponent } from './update-oppointment.component';
 
-describe('DeleteFileComponent', () => {
-  let component: DeleteFileComponent;
-  let fixture: ComponentFixture<DeleteFileComponent>;
+describe('UpdateOppointmentComponent', () => {
+  let component: UpdateOppointmentComponent;
+  let fixture: ComponentFixture<UpdateOppointmentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteFileComponent ]
+      declarations: [ UpdateOppointmentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteFileComponent);
+    fixture = TestBed.createComponent(UpdateOppointmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

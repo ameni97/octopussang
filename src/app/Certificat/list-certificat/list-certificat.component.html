@@ -1,39 +1,39 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
-        <div class="container">
-          <h2>Certificats</h2>
-          <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
-        </div>
-      </div><!-- End Breadcrumbs -->
-  
-      <!-- ======= Events Section ======= -->
-      <section id="events" class="events">
-        <div class="container" data-aos="fade-up">
-  
-          <div class="row" *ngFor="let certificat of list ;">
-            <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card">
-                <div class="card-img">
-                  <img src="assets/img/events-1.jpg" alt="...">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><a href="">{{certificat.title}}</a></h5>
-                  <p class="fst-italic text-center">taken in {{certificat.dateCertif}}/p>
-                  <p class="card-text">check out here {{certificat.qrCertif}}</p>
-                </div>
+      <div class="container">
+        <h2>Certificats</h2>
+        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" >
+          <div class="col-md-6 d-flex align-items-stretch" *ngFor="let certificat of list ;">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/img/events-1.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><Button  class="btn btn-link" (click)="downloadPDF(certificat.idCertif)">{{certificat.title}}</Button></h5>
+                <p class="fst-italic text-center">taken in {{certificat.dateCertif| date:"dd/MM/yyyy"}}</p>
+                <p class="card-text text-center"><img [attr.src]="certificat.qrCertif" width="100" height="100"/></p>
               </div>
             </div>
           </div>
-  
         </div>
-      </section><!-- End Events Section -->
-  
-  
-  
-  
-  
-  /<!--div class="row" *ngFor="let certificat of list ;">
-      <p>{{certificat.title}}</p>
-      <p>{{certificat.dateCertif}}</p>
-      <p>{{certificat.qrCertif}}</p>
-  </div>-->
+
+      </div>
+    </section><!-- End Events Section -->
+
+
+
+
+
+/<!--div class="row" *ngFor="let certificat of list ;">
+    <p>{{certificat.title}}</p>
+    <p>{{certificat.dateCertif}}</p>
+    <p>{{certificat.qrCertif}}</p>
+</div>-->

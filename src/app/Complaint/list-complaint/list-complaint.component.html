@@ -1,0 +1,123 @@
+<!--<!DOCTYPE html>
+<html>
+    <body>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>idC<td>
+                    <th>object<th>
+                    <th>textC<th>
+                    <th>sendDate<th>
+                    <th>status<th>
+            </thead>
+        
+    <tr *ngFor="let l of list ">
+        <td>{{l.idC}}<td>
+        <td>{{l.object}}<td>
+        <td>{{l.textC}}<td>
+        <td>{{l.sendDate}}<td>
+        <td>{{l.status}}<td>
+    </tr>
+</table>
+</body>
+</html>
+-->
+
+
+
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" >
+
+          <div class="col-lg-3 col-md-6"*ngFor="let l of list ">
+            <div class="box">
+              <h3>Complaint{{l.idC}}</h3>
+              <h4>{{l.status}}</h4>
+              <ul>
+                <li>Objet: {{l.object}}</li>
+                <li>{{l.textC}}</li>
+                <li>{{l.sendDate}}</li>
+            
+              </ul>
+              <div class="btn-wrap">
+              <!--<a href="delcomp" class="btn-buy">Delete</a>-->
+              <button  class="btn btn-outline-primary" (click)="delete(l.idC)">delete</button>
+              <button  class="btn btn-outline-primary" [routerLink]="['/updatecomp/',l.idC]">update</button>
+              <button  class="btn btn-outline-primary" (click)="changeStatus(l.idC)">Traiter</button>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- chatbot section -->
+<div class="chatbotContainer">
+  <div class="msg-header">
+    <div class="active">
+      <h4>ChatBot</h4>
+    </div>
+  </div>
+  <div class="chat-page">
+    <div class="msg-inbox">
+      <div class="chats">
+        <div class="msg-page">
+
+          <div class="received-chats">
+            <div class="received-msg">
+              <img class="robotImg" src="../assets/img/cute-robot-2.png">
+              
+              <div class="received-msg-inbox" >
+                  <p>This is ChatBot, Say Hi to start</p>
+              </div>
+            </div>
+          </div>
+
+          <div *ngFor="let rep of messages">
+            <div class="outgoing-chats">
+              <div class="outgoing-msg">
+                
+                    <p>{{rep[1]}}</p>
+                
+              </div>
+            </div> 
+          
+            <div class="received-chats">
+            <div class="received-msg">
+              <img class="robotImg" src="../assets/img/cute-robot-2.png">
+              
+              <div class="received-msg-inbox" *ngIf="reponse">
+                  <p>{{rep[0]}}</p>
+              </div>
+            </div>
+          </div>
+          
+           
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="msg-bottom">
+        <div class="chatInput-group">
+          <input type="text" class="form-control" name="chatinput" placeholder="write something .." [(ngModel)]="this.message" (keyup.enter)="chat()">
+          <!-- <div class="input-group-append">
+            <span class="input-group-text" ><button class="fa fa-paper-plane" (click)="chat()">Send</button></span>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+ 
+</div>
+
+<!-- end chatbot section -->
+    

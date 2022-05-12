@@ -15,13 +15,14 @@ export class AddEventComponent implements OnInit {
 
  ngOnInit(): void {
  }
- save(t:any){
-   this.s.addEvent(t).subscribe(
-     ()=>{
-      // alert('good')
-      this.router.navigate(['p2'])
-     }
-   );
-     }
+ save(t:Event){
+  this.s.addEvent(t).subscribe(
+    ()=>{
+     // alert('good')
+     this.router.navigate(['addev'])
+    }
+  );
+    }
+
 
 }

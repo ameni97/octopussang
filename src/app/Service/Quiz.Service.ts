@@ -8,7 +8,7 @@ export class QuizService {
 
   constructor(private http:HttpClient) { }
   getQuiz(){
-    return this.http.get('http://localhost:8084/SpringBoot/retrieve-all-Quizs');
+    return this.http.get('http://localhost:8084/SpringBoot/test/retrieve-all-Quizs');
    }
    deleteQuiz(id:any){
      return this.http.delete('http://localhost:8084/SpringBoot/quiz/'+id);
