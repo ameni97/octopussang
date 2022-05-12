@@ -8,7 +8,7 @@ export class MoneypotService {
 
   constructor(private http:HttpClient) { }
   getMoneypots(){
-    return this.http.get('http://localhost:8084/SpringBoot/moneypot');
+    return this.http.get('http://localhost:8084/SpringBoot/listerMoneypot');
    }
    deleteMoneypot(id:any){
      return this.http.delete('http://localhost:8084/SpringBoot/moneypot/'+id);

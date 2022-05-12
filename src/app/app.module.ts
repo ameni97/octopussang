@@ -43,7 +43,18 @@ import { ListNotificationComponent } from './Notification/list-notification/list
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddComplaintComponent } from './Complaint/add-complaint/add-complaint.component';
+import { ListComplaintComponent } from './Complaint/list-complaint/list-complaint.component';
+import { UpdateComplaintComponent } from './Complaint/update-complaint/update-complaint.component';
+import { DeleteComplaintComponent } from './Complaint/delete-complaint/delete-complaint.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddOppointmentComponent } from './Oppointment/add-oppointment/add-oppointment.component';
+import { DeleteOppointmentComponent } from './Oppointment/delete-oppointment/delete-oppointment.component';
+import { ListOppointmentComponent } from './Oppointment/list-oppointment/list-oppointment.component';
+import { UpdateOppointmentComponent } from './Oppointment/update-oppointment/update-oppointment.component';
 
 @NgModule({
   declarations: [
@@ -79,17 +90,26 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddNotificationComponent,
     DeleteNotificationComponent,
     ListNotificationComponent,
-    UpdateNotificationComponent
+    UpdateNotificationComponent,
+    AddComplaintComponent,
+    ListComplaintComponent,
+    UpdateComplaintComponent,
+    DeleteComplaintComponent,
+    AddOppointmentComponent,
+    DeleteOppointmentComponent,
+    ListOppointmentComponent,
+    UpdateOppointmentComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     NgxPaginationModule, 
     Ng2OrderModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports:[NgxPaginationModule],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],

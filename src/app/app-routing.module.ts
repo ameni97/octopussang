@@ -35,11 +35,18 @@ import { DeleteNotificationComponent } from './Notification/delete-notification/
 import { ListNotificationComponent } from './Notification/list-notification/list-notification.component';
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
 
+import { AddComplaintComponent } from './Complaint/add-complaint/add-complaint.component';
+import { DeleteComplaintComponent } from './Complaint/delete-complaint/delete-complaint.component';
+import { ListComplaintComponent } from './Complaint/list-complaint/list-complaint.component';
+import { UpdateComplaintComponent } from './Complaint/update-complaint/update-complaint.component';
 
-
+import { AddOppointmentComponent } from './Oppointment/add-oppointment/add-oppointment.component';
+import { DeleteOppointmentComponent } from './Oppointment/delete-oppointment/delete-oppointment.component';
+import { ListOppointmentComponent } from './Oppointment/list-oppointment/list-oppointment.component';
+import { UpdateOppointmentComponent } from './Oppointment/update-oppointment/update-oppointment.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'detailtr',pathMatch:'full'},
+  {path:'',redirectTo:'detailcomp',pathMatch:'full'},
   {path:'addtr', component:AddTrainingComponent},
   {path:'updatetr/:id', component:UpdateTrainingComponent},
   {path:'detailtr', component:ListTrainingComponent},
@@ -50,7 +57,7 @@ const routes: Routes = [
   {path:'addmp', component:AddMoneypotComponent},
   {path:'updatemp/:id', component:UpdateMoneypotComponent},
   {path:'delmp/:id', component:DeleteMoneypotComponent},
-  {path:'detailmp/:id', component:ListMoneypotComponent},
+  {path:'detailmp', component:ListMoneypotComponent},
   {path:'addmat', component:AddMaterialComponent},
   {path:'updatemat/:id', component:UpdateMaterialComponent},
   {path:'delmat/:id', component:DeleteMaterialComponent},
@@ -75,7 +82,17 @@ const routes: Routes = [
   {path:'addnot', component:AddNotificationComponent},
   {path:'updatenot/:id', component:UpdateNotificationComponent},
   {path:'delnot/:id', component:DeleteNotificationComponent},
-  {path:'detailnot/:id', component:ListNotificationComponent}
+  {path:'detailnot/:id', component:ListNotificationComponent},
+
+  {path:'addcomp', component:AddComplaintComponent},
+  {path:'updatecomp/:id', component:UpdateComplaintComponent},
+  {path:'delcomp/:id', component:DeleteComplaintComponent},
+  {path:'detailcomp', component:ListComplaintComponent},
+
+  {path:'addopp', component:AddOppointmentComponent},
+  {path:'updateopp/:id', component:UpdateOppointmentComponent},
+  {path:'delopp/:id', component:DeleteOppointmentComponent},
+  {path:'detailopp', component:ListOppointmentComponent}
 
 ];
 
