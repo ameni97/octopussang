@@ -34,6 +34,14 @@ import { AddNotificationComponent } from './Notification/add-notification/add-no
 import { DeleteNotificationComponent } from './Notification/delete-notification/delete-notification.component';
 import { ListNotificationComponent } from './Notification/list-notification/list-notification.component';
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
+import { AddProfilComponent } from './Profil/add-profil/add-profil.component';
+import { DeleteProfilComponent } from './Profil/delete-profil/delete-profil.component';
+import { ListProfilComponent } from './Profil/list-profil/list-profil.component';
+import { UpdateProfilComponent } from './Profil/update-profil/update-profil.component';
+import { AddOffreComponent } from './Offre/add-offre/add-offre.component';
+import { DeleteOffreComponent } from './Offre/delete-offre/delete-offre.component';
+import { ListOffreComponent } from './Offre/list-offre/list-offre.component';
+import { UpdateOffreComponent } from './Offre/update-offre/update-offre.component';
 
 import { AddComplaintComponent } from './Complaint/add-complaint/add-complaint.component';
 import { DeleteComplaintComponent } from './Complaint/delete-complaint/delete-complaint.component';
@@ -84,6 +92,10 @@ const routes: Routes = [
   {path:'delnot/:id', component:DeleteNotificationComponent},
   {path:'detailnot/:id', component:ListNotificationComponent},
 
+  {path:'addoff', component:AddOffreComponent},
+  {path:'updateoff/:id', component:UpdateOffreComponent},
+  {path:'deloff/:id',  component:DeleteOffreComponent},
+  {path:'detailoff', component:ListOffreComponent},
   {path:'addcomp', component:AddComplaintComponent},
   {path:'updatecomp/:id', component:UpdateComplaintComponent},
   {path:'delcomp/:id', component:DeleteComplaintComponent},
@@ -92,8 +104,12 @@ const routes: Routes = [
   {path:'addopp', component:AddOppointmentComponent},
   {path:'updateopp/:id', component:UpdateOppointmentComponent},
   {path:'delopp/:id', component:DeleteOppointmentComponent},
-  {path:'detailopp', component:ListOppointmentComponent}
+  {path:'detailopp', component:ListOppointmentComponent},
 
+  {path:'addpro', component:AddProfilComponent},
+  {path:'updatepro/:id', component:UpdateProfilComponent},
+  {path:'delpro/:id',  component:DeleteProfilComponent},
+  {path:'detailpro', component:ListProfilComponent}
 ];
 
 @NgModule({

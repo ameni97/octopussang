@@ -1,5 +1,5 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
@@ -47,10 +47,15 @@ import { AddComplaintComponent } from './Complaint/add-complaint/add-complaint.c
 import { ListComplaintComponent } from './Complaint/list-complaint/list-complaint.component';
 import { UpdateComplaintComponent } from './Complaint/update-complaint/update-complaint.component';
 import { DeleteComplaintComponent } from './Complaint/delete-complaint/delete-complaint.component';
-import { HttpClientModule } from '@angular/common/http';
+import { AddProfilComponent } from './Profil/add-profil/add-profil.component';
+import { DeleteProfilComponent } from './Profil/delete-profil/delete-profil.component';
+import { ListProfilComponent } from './Profil/list-profil/list-profil.component';
+import { UpdateProfilComponent } from './Profil/update-profil/update-profil.component';
+import { AddOffreComponent } from './Offre/add-offre/add-offre.component';
+import { DeleteOffreComponent } from './Offre/delete-offre/delete-offre.component';
+import { ListOffreComponent } from './Offre/list-offre/list-offre.component';
+import { UpdateOffreComponent } from './Offre/update-offre/update-offre.component';
 
-import { FormsModule } from '@angular/forms'; 
-import { ReactiveFormsModule } from '@angular/forms';
 import { AddOppointmentComponent } from './Oppointment/add-oppointment/add-oppointment.component';
 import { DeleteOppointmentComponent } from './Oppointment/delete-oppointment/delete-oppointment.component';
 import { ListOppointmentComponent } from './Oppointment/list-oppointment/list-oppointment.component';
@@ -91,6 +96,14 @@ import { UpdateOppointmentComponent } from './Oppointment/update-oppointment/upd
     DeleteNotificationComponent,
     ListNotificationComponent,
     UpdateNotificationComponent,
+    AddOffreComponent,
+    DeleteOffreComponent,
+    ListOffreComponent,
+    UpdateOffreComponent,
+    AddProfilComponent,
+    DeleteProfilComponent,
+    ListProfilComponent,
+    UpdateProfilComponent,
     AddComplaintComponent,
     ListComplaintComponent,
     UpdateComplaintComponent,

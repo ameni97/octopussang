@@ -1,0 +1,41 @@
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Profiles</h2>
+      <p>check your profile</p>
+      </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let profile of list">
+          <div class="course-item">
+            <!--<img src="assets/img/course-1.jpg" class="img-fluid" alt="...">-->
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>{{profile.domaine}}</h4>
+                <p class="price">{{profile.educationLevel}}</p>
+              </div>
+
+              <h3>{{profile.promotionYear}}</h3>
+              <p>{{profile.centreInteret}}</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                    <a [routerLink]="['/updatepro/',profile.idProfile]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> <!-- End Course Item-->
+          
+      </div>
+
+      
+
+    </div>
+  </section><!-- End Courses Section -->
