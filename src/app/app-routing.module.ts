@@ -56,7 +56,7 @@ const routes: Routes = [
   {path:'addmp', component:AddMoneypotComponent},
   {path:'updatemp/:id', component:UpdateMoneypotComponent},
   {path:'delmp/:id', component:DeleteMoneypotComponent},
-  {path:'detailmp/:id', component:ListMoneypotComponent},
+  {path:'detailmp', component:ListMoneypotComponent},
   {path:'addmat', component:AddMaterialComponent},
   {path:'updatemat/:id', component:UpdateMaterialComponent},
   {path:'delmat/:id', component:DeleteMaterialComponent},
