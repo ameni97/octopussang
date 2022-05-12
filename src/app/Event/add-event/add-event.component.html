@@ -1,1 +1,102 @@
-<p>add-event works!</p>
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Events</h2>
+      <p>OUR EVENTS</p>
+      </div>
+  </div>
+  
+  <section id="events" class="events">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6  align-items-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Add Event</h5>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>event name</label>
+                <input type="text" class="form-control"  name="evName" placeholder="evName" ngModel required #n="ngModel" >
+                <div *ngIf="n.invalid && n.touched" class="invalid-feedback">
+                    evName required
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">place</label>
+                <input type="number" class="form-control" name="place" placeholder="place" ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>date</label>
+                <input type="datetime" class="form-control" placeholder="dateEv" name="dateEv" ngModel minlength="3" #t="ngModel" required>
+                <div *ngIf="t.invalid">
+   
+                    <div *ngIf="t.errors?.['required']" class="invalid-feedback">
+                        <span> required</span>
+                    </div>
+                    <div *ngIf="t.errors?.['minlength']" class="invalid-feedback">
+                       minlength
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>description</label>
+                <input type="text" class="form-control" placeholder="description" name="description" ngModel minlength="3" #t="ngModel" required>
+                <div *ngIf="t.invalid">
+   
+                    <div *ngIf="t.errors?.['required']" class="invalid-feedback">
+                        <span> required</span>
+                    </div>
+                    <div *ngIf="t.errors?.['minlength']" class="invalid-feedback">
+                       minlength
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>nbParticipation</label>
+                <input type="number" class="form-control" placeholder="nbParticipation" name="nbParticipation" ngModel minlength="3" #t="ngModel" required>
+                <div *ngIf="t.invalid">
+   
+                    <div *ngIf="t.errors?.['required']" class="invalid-feedback">
+                        <span> required</span>
+                    </div>
+                    <div *ngIf="t.errors?.['minlength']" class="invalid-feedback">
+                       minlength
+                    </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          <div class="row">
+            <div class="update ml-auto d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-round" (click)="save(f.value)" [disabled]="f.invalid">Save Event</button>
+            </div>
+          </div>
+          </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  
+  

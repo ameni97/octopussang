@@ -21,4 +21,17 @@ export class ListEventComponent implements OnInit {
     );
   }
 
+  delete(id:number){
+    this.service.deleteEvent(id).subscribe(()=>{
+      console.log(id)
+      this.service.getEvents().subscribe(
+        (t)=>{
+          this.list=t;
+          console.log(t);
+        }
+      );  
+    })
+     
+  }
+
 }
