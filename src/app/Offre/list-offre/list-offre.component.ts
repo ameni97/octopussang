@@ -21,5 +21,16 @@ export class ListOffreComponent implements OnInit {
       }
     );
   }
+  delete(id:any){
+    this.service.deleteOffre(id).subscribe(()=>{
+      this.service.getOffres().subscribe(
+        (t)=>{
+          this.list=t;
+          console.log(t);
+        }
+      );
+    })
+  }
+
 
 }

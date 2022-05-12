@@ -20,12 +20,16 @@
                 <h4>offre name: {{offre.ofName}}</h4><br>
                 <br><p class="price">postul date : {{offre.datePost |date:"dd/MM/yyyy" }}</p>
               </div>
+              
+              <div class="btn-wrap">
+                <button class="btn btn-outline-primary" (click)="delete(offre.idOffre)">delete</button>
+              </div>
 
               <h3>number of posts : {{offre.nbPosts}}</h3><br>
               <p>  Interet : {{offre.centreInteret}}</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
-                    <a [routerLink]="['/updateOff/',offre.idOffre]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a [routerLink]="['/updateoff/',offre.idOffre]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
                 </div>
               </div>
             </div>

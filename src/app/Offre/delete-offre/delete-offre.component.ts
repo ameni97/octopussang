@@ -17,7 +17,7 @@ export class DeleteOffreComponent implements OnInit {
       this.id=this.ar.snapshot.params['id'];
   this.s.deleteOffre(this.id).subscribe(
     ()=>{
-  this.router.navigate(['p2'])
+  this.router.navigate(['detailoff'])
     }
   );
     }
