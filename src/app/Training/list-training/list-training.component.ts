@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrainingService } from 'src/app/Service/Training.Service';
 
 @Component({
@@ -8,8 +10,10 @@ import { TrainingService } from 'src/app/Service/Training.Service';
 })
 export class ListTrainingComponent implements OnInit {
 
+ 
   list!:any;
-  constructor(private service: TrainingService) { }
+  id!:any;
+  constructor(private service: TrainingService,  protected eventManager: EventManager, private ar:ActivatedRoute,private r:Router) { }
 
   ngOnInit(): void {
     this.service.getTrainings().subscribe(
@@ -18,6 +22,13 @@ export class ListTrainingComponent implements OnInit {
         console.log(t);
       }
     );
+  }
+  Participe(f:any){
+      this.service.participateTraining(f,this.id).subscribe(
+        ()=>{
+    this.r.navigate(['detailtr'])
+        }
+      );
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 import { CertificatService } from 'src/app/Service/Certificat.Service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CertificatService } from 'src/app/Service/Certificat.Service';
 export class ListCertificatComponent implements OnInit {
 
   list!:any;
-  constructor(private service: CertificatService) { }
+  constructor(private service: CertificatService,  protected eventManager: EventManager) { }
 
   ngOnInit(): void {
     this.service.getCertificats().subscribe(

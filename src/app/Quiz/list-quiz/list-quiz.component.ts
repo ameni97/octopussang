@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionService } from 'src/app/Service/Question.Service';
 import { QuizService } from 'src/app/Service/Quiz.Service';
 
 @Component({
@@ -9,13 +10,20 @@ import { QuizService } from 'src/app/Service/Quiz.Service';
 export class ListQuizComponent implements OnInit {
 
   list!:any;
-  constructor(private service: QuizService) { }
+  listq!:any;
+  constructor(private service: QuizService, private serviceq: QuestionService) { }
 
   ngOnInit(): void {
     this.service.getQuiz().subscribe(
       (t)=>{
         this.list=t;
         console.log(t);
+      }
+    );
+    this.serviceq.getQuestions().subscribe(
+      (s)=>{
+        this.listq=s;
+        console.log(s);
       }
     );
   }

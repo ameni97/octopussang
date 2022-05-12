@@ -108,7 +108,8 @@ import { UpdateOppointmentComponent } from './Oppointment/update-oppointment/upd
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  bootstrap: [AppComponent],
+ // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
