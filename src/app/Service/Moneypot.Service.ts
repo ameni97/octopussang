@@ -19,4 +19,8 @@ export class MoneypotService {
    updateMoneypot(data:any,id:any){
  return this.http.put('http://localhost:8084/SpringBoot/moneypot/'+id,data);
    }
+   donate(money:any,id:any,iduser:any){
+     const url='http://localhost:8084/SpringBoot/participer-a-Moneypot/'+iduser+"/"+id+"/"+money;
+     return this.http.put(url,{});
+   }
 }
