@@ -1,0 +1,19 @@
+<p>updateproduct works!</p>
+<form #f="ngForm">
+
+<label> textC </label>
+<input type="text" name="object" ngModel minlength="3" #t="ngModel" required >
+<div *ngIf="t.invalid">
+<div *ngIf="t.errors?.['required']">
+required
+</div>
+<div *ngIf="t.errors?.['minlength']">
+minlength
+</div>
+</div>
+<label>date</label>
+<input type="text" name="sendDate" ngModel >
+
+
+<input type="submit" value="update product" (click)="save(f.value)" [disabled]="f.invalid">
+</form>
