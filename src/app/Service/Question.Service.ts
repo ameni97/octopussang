@@ -11,12 +11,12 @@ export class QuestionService {
     return this.http.get('http://localhost:8084/SpringBoot/retrieve-all-Questions');
    }
    deleteQuestion(id:any){
-     return this.http.delete('http://localhost:8084/SpringBoot/test/question/'+id);
+     return this.http.delete('http://localhost:8084/SpringBoot/question/'+id);
    }
    addQuestion(data:any){
- return this.http.post('http://localhost:8084/SpringBoottest//question/',data);
+ return this.http.post('http://localhost:8084/SpringBoottest/question/',data);
    }
    updateQuestion(data:any,id:any){
- return this.http.put('http://localhost:8084/SpringBoot/testquestion/'+id,data);
+ return this.http.put('http://localhost:8084/SpringBoot/question/'+id,data);
    }
 }

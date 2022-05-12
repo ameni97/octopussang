@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import {APP_BASE_HREF} from '@angular/common';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddTrainingComponent } from './Training/add-training/add-training.component';
 import { UpdateTrainingComponent } from './Training/update-training/update-training.component';
-import { DeleteTrainingComponent } from './Training/delete-training/delete-training.component';
 import { ListTrainingComponent } from './Training/list-training/list-training.component';
 import { AddCertificatComponent } from './Certificat/add-certificat/add-certificat.component';
-import { DeleteCertificatComponent } from './Certificat/delete-certificat/delete-certificat.component';
 import { UpdateCertificatComponent } from './Certificat/update-certificat/update-certificat.component';
 import { ListCertificatComponent } from './Certificat/list-certificat/list-certificat.component';
 import { AddMoneypotComponent } from './Moneypot/add-moneypot/add-moneypot.component';
@@ -25,9 +28,7 @@ import { ListQuizComponent } from './Quiz/list-quiz/list-quiz.component';
 import { UpdateQuizComponent } from './Quiz/update-quiz/update-quiz.component';
 
 import { AddFileComponent } from './File/add-file/add-file.component';
-import { DeleteFileComponent } from './File/delete-file/delete-file.component';
 import { ListFileComponent } from './File/list-file/list-file.component';
-import { UpdateFileComponent } from './File/update-file/update-file.component';
 import { AddQuestionComponent } from './Question/add-question/add-question.component';
 import { DeleteQuestionComponent } from './Question/delete-question/delete-question.component';
 import { ListQuestionComponent } from './Question/list-question/list-question.component';
@@ -40,19 +41,28 @@ import { AddNotificationComponent } from './Notification/add-notification/add-no
 import { DeleteNotificationComponent } from './Notification/delete-notification/delete-notification.component';
 import { ListNotificationComponent } from './Notification/list-notification/list-notification.component';
 import { UpdateNotificationComponent } from './Notification/update-notification/update-notification.component';
-import { APP_BASE_HREF } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AddComplaintComponent } from './Complaint/add-complaint/add-complaint.component';
+import { ListComplaintComponent } from './Complaint/list-complaint/list-complaint.component';
+import { UpdateComplaintComponent } from './Complaint/update-complaint/update-complaint.component';
+import { DeleteComplaintComponent } from './Complaint/delete-complaint/delete-complaint.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddOppointmentComponent } from './Oppointment/add-oppointment/add-oppointment.component';
+import { DeleteOppointmentComponent } from './Oppointment/delete-oppointment/delete-oppointment.component';
+import { ListOppointmentComponent } from './Oppointment/list-oppointment/list-oppointment.component';
+import { UpdateOppointmentComponent } from './Oppointment/update-oppointment/update-oppointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTrainingComponent,
     UpdateTrainingComponent,
-    DeleteTrainingComponent,
     ListTrainingComponent,
     AddCertificatComponent,
-    DeleteCertificatComponent,
     UpdateCertificatComponent,
     ListCertificatComponent,
     AddMoneypotComponent,
@@ -68,9 +78,7 @@ import { FormsModule } from '@angular/forms';
     ListQuizComponent,
     UpdateQuizComponent,
     AddFileComponent,
-    DeleteFileComponent,
     ListFileComponent,
-    UpdateFileComponent,
     AddQuestionComponent,
     DeleteQuestionComponent,
     ListQuestionComponent,
@@ -82,16 +90,30 @@ import { FormsModule } from '@angular/forms';
     AddNotificationComponent,
     DeleteNotificationComponent,
     ListNotificationComponent,
-    UpdateNotificationComponent
+    UpdateNotificationComponent,
+    AddComplaintComponent,
+    ListComplaintComponent,
+    UpdateComplaintComponent,
+    DeleteComplaintComponent,
+    AddOppointmentComponent,
+    DeleteOppointmentComponent,
+    ListOppointmentComponent,
+    UpdateOppointmentComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule, 
+    Ng2OrderModule,
+    Ng2SearchPipeModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
+  exports:[NgxPaginationModule],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],
- // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

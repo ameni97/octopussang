@@ -6,12 +6,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'octopuss';
-  constructor(){
-    
-  }
-  ngOnInit(): void {
-    sessionStorage.setItem('id','1')
-  }
   
+  ngOnInit(): void {
+    sessionStorage.setItem('id',"1" );
+  }
 }
 

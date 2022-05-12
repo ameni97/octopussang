@@ -1,0 +1,36 @@
+<section id="pricing" class="pricing">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row" >
+
+        <div class="col-lg-3 col-md-6"*ngFor="let l of list ">
+          <div class="box">
+            <h3>Oppointment{{l.idOp}}</h3>
+            <h4>{{l.opDate}}</h4>
+            <ul>
+              <li>{{l.user}}</li>
+              <li>{{l.expert.nom}}</li>
+              <li>{{l.expert.expertType}}</li>
+          
+            </ul>
+            <div class="btn-wrap">
+            <!--<a href="delcomp" class="btn-buy">Delete</a>-->
+            <button  class="btn btn-outline-primary" (click)="delete(l.idOp)">delete</button>
+
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </div>
+  </section><!-- End Pricing Section -->
+
+  <!-- chatbot section -->
+
+
+    
+
+
+  
+
+

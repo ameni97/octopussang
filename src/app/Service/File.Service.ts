@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { File } from '../model/File';
 
 @Injectable({
   providedIn: 'root'
@@ -7,16 +8,19 @@ import { Injectable } from '@angular/core';
 export class FileService {
 
   constructor(private http:HttpClient) { }
-  getFiles(){
-    return this.http.get('http://localhost:8084/SpringBoot/file');
+  getFilesBy(id:any){
+    return this.http.get<File[]>('http://localhost:8084/SpringBoot/getFilesById/'+id);
    }
-   deleteFile(id:any){
-     return this.http.delete('http://localhost:8084/SpringBoot/file/'+id);
+   getFiles(){
+    return this.http.get<File[]>('http://localhost:8084/SpringBoot/getFiles');
    }
-   addFile(data:any){
- return this.http.post('http://localhost:8084/SpringBoot/file/',data);
+  deleteFile(id:any){
+     return this.http.delete('http://localhost:8084/SpringBoot/remove-file/'+id);
    }
-   updateFile(data:any,id:any){
- return this.http.put('http://localhost:8084/SpringBoot/file/'+id,data);
+   uploadFile(data:File){
+ return this.http.post('http://localhost:8084/SpringBoot/uploadFile',data);
    }
+  public downloadFile(id:any){
+    return this.http.get('http://localhost:8084/SpringBoot/downloadFile/'+id);
+  }
 }

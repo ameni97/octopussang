@@ -1,1 +1,111 @@
-<p>add-certificat works!</p>
+<div class="breadcrumbs">
+    <div class="container">
+      <h2>Certifications</h2>
+      <p>Certifications will give you apportunities for work</p>
+      </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6  align-items-center">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Add Certificat</h5>
+      </div>
+      <div class="card-body">
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>title</label>
+                <input type="text" class="form-control"  name="title" placeholder="title" ngModel required #n="ngModel" >
+                <div *ngIf="n.invalid && n.touched" class="invalid-feedback">
+                    title required
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">date</label>
+                <input type="date" class="form-control" name="dateCertif" value="currentD" ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!--<div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>QRCode</label>
+                <button class="btn btn-round" (click)="download(certificat.idCertif)"><i class="bi bi-qr-code"></i>generate QR code</button>
+              </div>
+            </div>-->
+            <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>User</label>
+                  <select  name="user" class="form-control" ngModel>
+                    <option [ngValue]="null">select User</option>
+                    <option *ngFor="let user of listf" [ngValue]="user.id">{{user.firstname}}&nbsp; {{user.lastname}}</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+          <div class="row">
+            <div class="update ml-auto d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-round" (click)="save(f.value)" [disabled]="f.invalid">Save Certification</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+        </div>
+        <div class="col-md-6  align-items-center">
+            <div class="content">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title"> List Certificats </h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead class=" text-primary">
+                              <th> Title </th>
+                              <th> Date </th>
+                              <th> QRCode </th>
+                              <th> Cachet </th>
+                              <th> Action </th>
+                            </thead>
+                            <tbody  *ngFor="let certificate of list" >
+                              <tr>
+                                <td>
+                                    {{certificate.title}}
+                                </td>
+                                <td>
+                                    {{certificate.dateCertif | date:"dd/MM/yyyy"}}
+                                </td>
+                                <td>
+                                    {{certificate.qrCertif}}
+                                </td>
+                                <td>
+                                    {{certificate.cachet}}
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/updatecer/',certificate.idCertif]"><i class="bi bi-gear"></i></a>&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-outline-danger" (click)="delete(certificate.idCertif)"><i class="bi bi-trash"></i></button>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>

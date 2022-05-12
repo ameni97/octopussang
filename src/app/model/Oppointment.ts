@@ -5,6 +5,6 @@ export class Oppointment  {
     
     public idOp?: number ;
     public opDate?: Date;
-    public users?:User[];
+    public users?:string;
     public experts?:Expert[];
 }

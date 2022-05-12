@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateFileComponent } from './update-file.component';
+import { AddComplaintComponent } from './add-complaint.component';
 
-describe('UpdateFileComponent', () => {
-  let component: UpdateFileComponent;
-  let fixture: ComponentFixture<UpdateFileComponent>;
+describe('AddComplaintComponent', () => {
+  let component: AddComplaintComponent;
+  let fixture: ComponentFixture<AddComplaintComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateFileComponent ]
+      declarations: [ AddComplaintComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateFileComponent);
+    fixture = TestBed.createComponent(AddComplaintComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
